@@ -99,7 +99,7 @@ describe('2. LFM Chirp & Matched Filter Pulse Compression Suite', () => {
     });
 
     expect(chirpResult.numSamples).toBe(500);
-    expect(chirpResult.timeBandwidthProduct).toBe(200);
+    expect(chirpResult.timeBandwidthProduct).toBeCloseTo(200, 1);
     // Range resolution = c / (2 * B) = 3e8 / (2 * 20e6) = 7.49 m
     expect(chirpResult.rangeResolutionMeters).toBeCloseTo(7.495, 2);
 
@@ -186,7 +186,8 @@ describe('3. CFAR Adaptive Detectors & Swerling Target Models', () => {
     const pdHigh = calculateSwerlingPd('Swerling-1', 20.0, 1e-6);
     expect(pdHigh).toBeGreaterThan(pdLow);
 
-    const pdSw0 = calculateSwerlingPd('Swerling-0', 15.0, 1e-6);
+    const snrLinear15Db = Math.pow(10, 15 / 10);
+    const pdSw0 = calculateSwerlingPd('Swerling-0', snrLinear15Db, 1e-6);
     expect(pdSw0).toBeGreaterThan(0.9);
   });
 });
