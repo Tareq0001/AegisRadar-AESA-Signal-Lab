@@ -1,0 +1,57 @@
+name: AegisRadar AESA DSP & EW Verification Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  typescript-dsp-suite:
+    name: TypeScript Radar DSP & Vitest Suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Typecheck & Run Radar DSP Unit Tests
+        run: |
+          npm run lint
+          npm run test
+
+  cpp17-pulse-doppler-kernel:
+    name: C++17 SIMD Pulse-Doppler & Monopulse Kernel
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Compile C++17 AESA Pulse-Doppler Processor
+        run: |
+          g++ -std=c++17 -O3 -Wall -Wextra -pedantic -c cpp_dsp/aesa_pulse_doppler.cpp -o cpp_dsp/aesa_pulse_doppler.o
+
+  python-ambiguity-sim:
+    name: Python Ambiguity Function & Radar Equation Verifier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Scientific Dependencies
+        run: pip install -r python_sim/requirements.txt
+
+      - name: Execute Radar Waveform & Ambiguity Verification
+        run: python python_sim/radar_waveform_analyzer.py --self-test

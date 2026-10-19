@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>AegisRadar AESA — 3D Phased Array Radar & Signal Processing Lab</title>
+    <title>AegisRadar AESA â€” 3D Phased Array Radar & Signal Processing Lab</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Three.js & OrbitControls -->
@@ -65,7 +65,7 @@
             </div>
             <div>
                 <span class="text-slate-500 text-[10px]">BEAM STEER:</span>
-                <span id="telSteer" class="font-bold text-amber-400">AZ: +15.0° | EL: +8.0°</span>
+                <span id="telSteer" class="font-bold text-amber-400">AZ: +15.0آ° | EL: +8.0آ°</span>
             </div>
             <div>
                 <span class="text-slate-500 text-[10px]">PULSE PRF:</span>
@@ -85,7 +85,7 @@
             </button>
             <!-- Language Toggle -->
             <button id="langToggleBtn" class="px-2.5 py-1 text-xs font-bold rounded bg-emerald-950 border border-emerald-600/60 text-emerald-300 hover:bg-emerald-900 transition">
-                عربي
+                ط¹ط±ط¨ظٹ
             </button>
         </div>
     </header>
@@ -106,16 +106,16 @@
                 <!-- Azimuth Slider -->
                 <div>
                     <div class="flex justify-between text-[11px] font-mono text-slate-300 mb-1">
-                        <span id="lblAzimuth">Azimuth Angle (θ)</span>
-                        <span id="valAzimuth" class="text-emerald-400 font-bold">+15°</span>
+                        <span id="lblAzimuth">Azimuth Angle (خ¸)</span>
+                        <span id="valAzimuth" class="text-emerald-400 font-bold">+15آ°</span>
                     </div>
                     <input type="range" id="sliderAzimuth" min="-60" max="60" value="15" class="w-full accent-emerald-500 bg-slate-800 rounded h-1.5 cursor-pointer">
                 </div>
                 <!-- Elevation Slider -->
                 <div>
                     <div class="flex justify-between text-[11px] font-mono text-slate-300 mb-1">
-                        <span id="lblElevation">Elevation Angle (φ)</span>
-                        <span id="valElevation" class="text-cyan-400 font-bold">+8°</span>
+                        <span id="lblElevation">Elevation Angle (د†)</span>
+                        <span id="valElevation" class="text-cyan-400 font-bold">+8آ°</span>
                     </div>
                     <input type="range" id="sliderElevation" min="-20" max="60" value="8" class="w-full accent-cyan-500 bg-slate-800 rounded h-1.5 cursor-pointer">
                 </div>
@@ -125,19 +125,19 @@
             <div class="absolute bottom-6 left-4 z-20 flex space-x-1.5 rtl:space-x-reverse bg-slate-950/85 p-1.5 rounded-xl border border-emerald-800/60 backdrop-blur-md">
                 <button id="rcsStealthBtn" class="px-2.5 py-1 text-xs font-semibold rounded bg-slate-800 text-slate-300 hover:text-emerald-300 flex items-center space-x-1">
                     <i class="fa-solid fa-ghost"></i>
-                    <span>Stealth (0.005 m²)</span>
+                    <span>Stealth (0.005 mآ²)</span>
                 </button>
                 <button id="rcsDroneBtn" class="px-2.5 py-1 text-xs font-semibold rounded bg-emerald-600 text-white shadow-md flex items-center space-x-1">
                     <i class="fa-solid fa-drone"></i>
-                    <span>Drone (0.02 m²)</span>
+                    <span>Drone (0.02 mآ²)</span>
                 </button>
                 <button id="rcsMissileBtn" class="px-2.5 py-1 text-xs font-semibold rounded bg-slate-800 text-slate-300 hover:text-emerald-300 flex items-center space-x-1">
                     <i class="fa-solid fa-rocket"></i>
-                    <span>Cruise (0.1 m²)</span>
+                    <span>Cruise (0.1 mآ²)</span>
                 </button>
                 <button id="rcsFighterBtn" class="px-2.5 py-1 text-xs font-semibold rounded bg-slate-800 text-slate-300 hover:text-emerald-300 flex items-center space-x-1">
                     <i class="fa-solid fa-jet-fighter"></i>
-                    <span>Fighter (3.0 m²)</span>
+                    <span>Fighter (3.0 mآ²)</span>
                 </button>
             </div>
         </div>
@@ -157,7 +157,7 @@
                 <canvas id="ppiCanvas" width="350" height="150" class="w-full bg-black/90 rounded border border-slate-800"></canvas>
                 <div class="flex justify-between items-center text-[10px] text-slate-400 mt-1.5 font-mono">
                     <span>MAX RANGE: <span class="text-emerald-400 font-bold">180 KM</span></span>
-                    <span>BEARING: <span id="ppiBearing" class="text-cyan-400 font-bold">045°</span></span>
+                    <span>BEARING: <span id="ppiBearing" class="text-cyan-400 font-bold">045آ°</span></span>
                 </div>
             </div>
 
@@ -168,7 +168,7 @@
                         <i class="fa-solid fa-calculator mr-1.5 text-emerald-400"></i>
                         <span id="eqTitle">RADAR RANGE EQUATION SOLVER</span>
                     </span>
-                    <span class="text-[9px] font-mono text-cyan-400">Pr = (Pt·G²·λ²·σ) / ((4π)³·R⁴)</span>
+                    <span class="text-[9px] font-mono text-cyan-400">Pr = (Ptآ·Gآ²آ·خ»آ²آ·دƒ) / ((4د€)آ³آ·Râپ´)</span>
                 </div>
 
                 <div class="space-y-1.5 text-[11px] font-mono text-slate-300">
@@ -177,8 +177,8 @@
                         <span id="calcRangeVal" class="text-cyan-400 font-bold">64.5 km</span>
                     </div>
                     <div class="flex justify-between">
-                        <span>Target RCS (σ):</span>
-                        <span id="calcRcsVal" class="text-amber-400 font-bold">0.020 m²</span>
+                        <span>Target RCS (دƒ):</span>
+                        <span id="calcRcsVal" class="text-amber-400 font-bold">0.020 mآ²</span>
                     </div>
                     <div class="flex justify-between">
                         <span>Antenna Gain (G):</span>
@@ -220,325 +220,7 @@
 
     </div>
 
-    <!-- 3D Phased Array & Radar Canvas Engine -->
-    <script>
-        const I18N = {
-            en: {
-                subDesc: "Active Electronically Scanned Array (AESA), Digital Beamforming & Pulse Doppler DSP Lab",
-                steeringTitle: "DIGITAL BEAM STEERING",
-                lblAzimuth: "Azimuth Angle (θ)",
-                lblElevation: "Elevation Angle (φ)",
-                ppiTitle: "PLAN POSITION INDICATOR (PPI)",
-                eqTitle: "RADAR RANGE EQUATION SOLVER",
-                fftTitle: "DOPPLER FFT SPECTRUM & MTI"
-            },
-            ar: {
-                subDesc: "رادارات صفيف المسح الإلكتروني النشط (AESA)، تشكيل الحزم ومعالجة إشارات نبضات دوبلر",
-                steeringTitle: "التوجيه الإلكتروني للحزمة (Beamforming)",
-                lblAzimuth: "زاوية السمت (θ)",
-                lblElevation: "زاوية الارتفاع (φ)",
-                ppiTitle: "شاشة الرادار الدائرية (PPI)",
-                eqTitle: "حل معادلة مدى الرادار (Radar Equation)",
-                fftTitle: "تحليل طيف دوبلر وفلترة التشويش الأرضي"
-            }
-        };
-
-        let currentLang = 'en';
-
-        // Sound Synthesis (Web Audio API)
-        let audioCtx = null;
-        let isAudioMuted = true;
-
-        function initAudio() {
-            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-
-        function playRadarPing() {
-            if (isAudioMuted || !audioCtx) return;
-            const now = audioCtx.currentTime;
-            const osc = audioCtx.createOscillator();
-            const gain = audioCtx.createGain();
-            osc.type = 'sine';
-            osc.frequency.setValueAtTime(1200, now);
-            osc.frequency.exponentialRampToValueAtTime(300, now + 0.15);
-            gain.gain.setValueAtTime(0.2, now);
-            gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2);
-            osc.connect(gain);
-            gain.connect(audioCtx.destination);
-            osc.start(now);
-            osc.stop(now + 0.2);
-        }
-
-        // Three.js 3D AESA Phased Array Scene
-        let scene, camera, renderer, controls;
-        let trModules = [];
-        let beamMesh;
-        let currentAz = 15;
-        let currentEl = 8;
-        let targetRcs = 0.02;
-
-        function initThree() {
-            const container = document.getElementById('threeContainer');
-            scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x020617);
-            scene.fog = new THREE.FogExp2(0x020617, 0.01);
-
-            camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 2000);
-            camera.position.set(0, 18, 28);
-
-            renderer = new THREE.WebGLRenderer({ antialias: true });
-            renderer.setSize(container.clientWidth, container.clientHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-            renderer.shadowMap.enabled = true;
-            container.appendChild(renderer.domElement);
-
-            controls = new THREE.OrbitControls(camera, renderer.domElement);
-            controls.enableDamping = true;
-            controls.dampingFactor = 0.05;
-
-            // Lights
-            scene.add(new THREE.AmbientLight(0x38bdf8, 0.5));
-            const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
-            dirLight.position.set(20, 40, 30);
-            scene.add(dirLight);
-
-            // Ground Plate
-            const plate = new THREE.Mesh(new THREE.CylinderGeometry(14, 15, 1.2, 8), new THREE.MeshStandardMaterial({ color: 0x0f172a, metalness: 0.8 }));
-            plate.position.y = -0.6;
-            scene.add(plate);
-
-            // Octagonal AESA Antenna Array Backplane
-            const backplane = new THREE.Mesh(new THREE.CylinderGeometry(10, 10, 0.8, 8), new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.9 }));
-            backplane.rotation.x = Math.PI / 2;
-            scene.add(backplane);
-
-            // 16x16 Gallium Nitride (GaN) T/R Modules Grid
-            const modGeo = new THREE.BoxGeometry(0.7, 0.7, 0.4);
-            const modMat = new THREE.MeshStandardMaterial({ color: 0x10b981, metalness: 0.9, roughness: 0.3 });
-
-            for (let x = -7; x <= 7; x++) {
-                for (let y = -7; y <= 7; y++) {
-                    if (x * x + y * y <= 56) { // Octagonal/circular aperture
-                        const mod = new THREE.Mesh(modGeo, modMat.clone());
-                        mod.position.set(x * 0.9, y * 0.9, 0.5);
-                        scene.add(mod);
-                        trModules.push({ mesh: mod, x: x, y: y });
-                    }
-                }
-            }
-
-            // 3D Steered Radiation Beam (Cone Lobe)
-            const beamGeo = new THREE.ConeGeometry(5, 30, 32, 1, true);
-            const beamMat = new THREE.MeshBasicMaterial({ color: 0x10b981, wireframe: true, transparent: true, opacity: 0.4 });
-            beamMesh = new THREE.Mesh(beamGeo, beamMat);
-            beamMesh.position.set(0, 0, 15);
-            beamMesh.rotation.x = Math.PI / 2;
-            scene.add(beamMesh);
-
-            window.addEventListener('resize', onWindowResize);
-            updateBeamGeometry();
-            animate();
-        }
-
-        function updateBeamGeometry() {
-            const radAz = (currentAz * Math.PI) / 180;
-            const radEl = (currentEl * Math.PI) / 180;
-
-            // Orient beam cone according to azimuth and elevation
-            beamMesh.rotation.set(Math.PI / 2 - radEl, radAz, 0, 'YXZ');
-            const dist = 15;
-            beamMesh.position.set(
-                Math.sin(radAz) * Math.cos(radEl) * dist,
-                Math.sin(radEl) * dist,
-                Math.cos(radAz) * Math.cos(radEl) * dist
-            );
-
-            // Dynamic phase shading on T/R modules
-            trModules.forEach(m => {
-                const phase = (m.x * Math.sin(radAz) + m.y * Math.sin(radEl)) * 2;
-                const col = new THREE.Color().setHSL(0.38 + Math.sin(phase) * 0.1, 0.9, 0.5);
-                m.mesh.material.color = col;
-            });
-
-            solveRadarEquation();
-        }
-
-        // Radar Range Equation Solver
-        function solveRadarEquation() {
-            const ptKw = 120; // 120 kW
-            const pt = ptKw * 1000;
-            const freq = 9.5e9;
-            const c = 3e8;
-            const lambda = c / freq;
-            const gainLinear = 17782; // 42.5 dBi
-            const rangeM = 64.5 * 1000;
-
-            // Pr = (Pt * G^2 * lambda^2 * sigma) / ((4 * pi)^3 * R^4)
-            const numerator = pt * Math.pow(gainLinear, 2) * Math.pow(lambda, 2) * targetRcs;
-            const denominator = Math.pow(4 * Math.PI, 3) * Math.pow(rangeM, 4);
-            const prWatts = numerator / denominator;
-            const prDbm = 10 * Math.log10(prWatts * 1000);
-            const snr = prDbm - (-116.6); // Thermal noise floor
-
-            document.getElementById('calcRangeVal').innerText = '64.5 km';
-            document.getElementById('calcRcsVal').innerText = targetRcs.toFixed(3) + ' m²';
-            document.getElementById('calcPrVal').innerText = prDbm.toFixed(1) + ' dBm';
-            document.getElementById('calcSnrVal').innerText = (snr >= 0 ? '+' : '') + snr.toFixed(1) + ' dB (' + (snr > 12 ? 'LOCK' : 'SEARCH') + ')';
-        }
-
-        function onWindowResize() {
-            const container = document.getElementById('threeContainer');
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
-        }
-
-        // 2D PPI Radar Canvas
-        const ppiCanvas = document.getElementById('ppiCanvas');
-        const ppiCtx = ppiCanvas.getContext('2d');
-        let ppiAngle = 0;
-
-        function drawPpi() {
-            ppiCtx.fillStyle = 'rgba(2, 6, 23, 0.15)';
-            ppiCtx.fillRect(0, 0, ppiCanvas.width, ppiCanvas.height);
-
-            const cx = ppiCanvas.width / 2;
-            const cy = ppiCanvas.height / 2;
-            const maxR = ppiCanvas.height / 2 - 5;
-
-            // Range rings
-            ppiCtx.strokeStyle = 'rgba(16, 185, 129, 0.2)';
-            for (let r = 20; r <= maxR; r += 20) {
-                ppiCtx.beginPath();
-                ppiCtx.arc(cx, cy, r, 0, Math.PI * 2);
-                ppiCtx.stroke();
-            }
-
-            // Steered Beam Sector Arc
-            const beamAzRad = (currentAz * Math.PI) / 180 - Math.PI / 2;
-            ppiCtx.strokeStyle = 'rgba(52, 211, 153, 0.7)';
-            ppiCtx.lineWidth = 2;
-            ppiCtx.beginPath();
-            ppiCtx.moveTo(cx, cy);
-            ppiCtx.lineTo(cx + Math.cos(beamAzRad) * maxR, cy + Math.sin(beamAzRad) * maxR);
-            ppiCtx.stroke();
-
-            // Target Blip
-            const tx = cx + Math.cos(beamAzRad) * (maxR * 0.65);
-            const ty = cy + Math.sin(beamAzRad) * (maxR * 0.65);
-            ppiCtx.fillStyle = '#ef4444';
-            ppiCtx.beginPath();
-            ppiCtx.arc(tx, ty, 3.5, 0, Math.PI * 2);
-            ppiCtx.fill();
-        }
-
-        // Doppler FFT Canvas
-        const fftCanvas = document.getElementById('fftCanvas');
-        const fCtx = fftCanvas.getContext('2d');
-
-        function drawFft() {
-            fCtx.fillStyle = '#020617';
-            fCtx.fillRect(0, 0, fftCanvas.width, fftCanvas.height);
-
-            fCtx.strokeStyle = '#06b6d4';
-            fCtx.lineWidth = 1.5;
-            fCtx.beginPath();
-
-            const points = 60;
-            const step = fftCanvas.width / points;
-
-            for (let i = 0; i < points; i++) {
-                // Noise floor
-                let y = fftCanvas.height - 15 - Math.random() * 8;
-                // Target Doppler Peak around x=42
-                if (i === 42) y -= 55;
-                else if (i === 41 || i === 43) y -= 28;
-
-                if (i === 0) fCtx.moveTo(0, y);
-                else fCtx.lineTo(i * step, y);
-            }
-            fCtx.stroke();
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            controls.update();
-            drawPpi();
-            drawFft();
-            renderer.render(scene, camera);
-        }
-
-        // Controls
-        document.getElementById('sliderAzimuth').addEventListener('input', (e) => {
-            currentAz = parseFloat(e.target.value);
-            document.getElementById('valAzimuth').innerText = (currentAz >= 0 ? '+' : '') + currentAz + '°';
-            document.getElementById('telSteer').innerText = `AZ: ${currentAz >= 0 ? '+' : ''}${currentAz}° | EL: +${currentEl}°`;
-            document.getElementById('ppiBearing').innerText = ((currentAz + 360) % 360).toFixed(0).padStart(3, '0') + '°';
-            updateBeamGeometry();
-        });
-
-        document.getElementById('sliderElevation').addEventListener('input', (e) => {
-            currentEl = parseFloat(e.target.value);
-            document.getElementById('valElevation').innerText = (currentEl >= 0 ? '+' : '') + currentEl + '°';
-            document.getElementById('telSteer').innerText = `AZ: ${currentAz >= 0 ? '+' : ''}${currentAz}° | EL: +${currentEl}°`;
-            updateBeamGeometry();
-        });
-
-        // RCS Presets
-        const presets = [
-            { id: 'rcsStealthBtn', val: 0.005 },
-            { id: 'rcsDroneBtn', val: 0.02 },
-            { id: 'rcsMissileBtn', val: 0.1 },
-            { id: 'rcsFighterBtn', val: 3.0 }
-        ];
-
-        presets.forEach(p => {
-            document.getElementById(p.id).addEventListener('click', () => {
-                targetRcs = p.val;
-                presets.forEach(item => {
-                    const btn = document.getElementById(item.id);
-                    if (item.id === p.id) {
-                        btn.className = "px-2.5 py-1 text-xs font-semibold rounded bg-emerald-600 text-white shadow-md flex items-center space-x-1";
-                    } else {
-                        btn.className = "px-2.5 py-1 text-xs font-semibold rounded bg-slate-800 text-slate-300 hover:text-emerald-300 flex items-center space-x-1";
-                    }
-                });
-                playRadarPing();
-                solveRadarEquation();
-            });
-        });
-
-        // Reset Cam
-        document.getElementById('resetCamBtn').addEventListener('click', () => {
-            camera.position.set(0, 18, 28);
-            controls.target.set(0, 0, 0);
-        });
-
-        // Sound Toggle
-        document.getElementById('soundBtn').addEventListener('click', () => {
-            initAudio();
-            isAudioMuted = !isAudioMuted;
-            document.getElementById('soundIcon').className = isAudioMuted ? "fa-solid fa-volume-xmark" : "fa-solid fa-volume-high text-emerald-400";
-        });
-
-        // Language toggle
-        document.getElementById('langToggleBtn').addEventListener('click', () => {
-            currentLang = currentLang === 'en' ? 'ar' : 'en';
-            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-            document.getElementById('langToggleBtn').innerText = currentLang === 'ar' ? 'English' : 'عربي';
-
-            const t = I18N[currentLang];
-            document.getElementById('subHeaderDesc').innerText = t.subDesc;
-            document.getElementById('txtSteeringTitle').innerHTML = `<i class="fa-solid fa-compass mr-1"></i> ${t.steeringTitle}`;
-            document.getElementById('lblAzimuth').innerText = t.lblAzimuth;
-            document.getElementById('lblElevation').innerText = t.lblElevation;
-            document.getElementById('ppiTitle').innerText = t.ppiTitle;
-            document.getElementById('eqTitle').innerText = t.eqTitle;
-            document.getElementById('fftTitle').innerText = t.fftTitle;
-        });
-
-        // Init
-        initThree();
-    </script>
+    <!-- Modular TypeScript AESA Engine -->
+    <script type="module" src="/src/main.ts"></script>
 </body>
 </html>

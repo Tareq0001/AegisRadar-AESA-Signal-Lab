@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build & Release Artifacts
+dist/
+build/
+out/
+*.wasm
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+
+# C++ CMake / Build Directories
+cpp_dsp/build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Python Virtual Environments & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+*.egg-info/
+
+# Coverage & Test Logs
+coverage/
+*.lcov
+.nyc_output
+
+# IDE & OS Metadata
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+*.log

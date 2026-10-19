@@ -1,0 +1,42 @@
+{
+  "name": "aegisradar-aesa-signal-lab",
+  "version": "2.4.0",
+  "description": "Enterprise 3D Active Electronically Scanned Array (AESA) Radar DSP, Digital Beamforming, CFAR Detection & STAP Electronic Warfare Laboratory",
+  "type": "module",
+  "author": "Eng. Tareq Aboushi <Tareq0001>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "vite --port 3000",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "sim:python": "python python_sim/radar_waveform_analyzer.py",
+    "build:cpp": "g++ -std=c++17 -O3 -march=native -c cpp_dsp/aesa_pulse_doppler.cpp -o cpp_dsp/aesa_pulse_doppler.o"
+  },
+  "keywords": [
+    "aesa-radar",
+    "phased-array",
+    "digital-beamforming",
+    "pulse-doppler",
+    "cfar-detector",
+    "lfm-chirp",
+    "mvdr-null-steering",
+    "stap",
+    "electronic-warfare",
+    "eccm",
+    "radar-dsp",
+    "threejs"
+  ],
+  "dependencies": {
+    "three": "^0.128.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.128.0",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vitest": "^2.0.5"
+  }
+}
